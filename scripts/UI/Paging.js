@@ -1,11 +1,14 @@
-import UI from "./index.js";
+import Utils from "./Utils.js";
 
 const TransitionTime = 600;
-var isNavigating = false;
+
+const NavigationTickets = new Utils.TicketSystem();
+
 export default {
   Navigate: async (PageID) => {
-    if (isNavigating) return;
-    isNavigating = true;
+    if (PageID == $(`[data-page][data-active]`).data("page")) return;
+    const Ticket = NavigationTickets.GetTicket();
+    await NavigationTickets.WaitForRun(Ticket);
 
     const OldPage = $(`[data-page][data-active]`);
     const NewPage = $(`[data-page="${PageID}"]`);
@@ -13,13 +16,13 @@ export default {
     OldPage.addClass("wiped");
     NewPage.addClass("wiped");
     NewPage.attr("data-active", "");
-    await UI.Utils.Delay(TransitionTime / 2);
+    await Utils.Delay(TransitionTime / 2);
 
     OldPage.removeAttr("data-active");
 
     NewPage.removeClass("wiped");
     OldPage.removeClass("wiped");
-    await UI.Utils.Delay(TransitionTime);
-    isNavigating = false;
+    await Utils.Delay(TransitionTime);
+    NavigationTickets.TicketComplete(Ticket);
   },
 };

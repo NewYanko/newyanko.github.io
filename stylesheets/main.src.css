@@ -9,12 +9,12 @@
   --c-release: #99c7f4;
   --c-background: #101010;
   --wipe-length: 25%;
+  --grid-width: 128px;
+  --grid-height: 50px;
 }
 
 body {
   --grid-color: #ffffff45;
-  --grid-width: 128px;
-  --grid-height: 50px;
 
   background: radial-gradient(circle, transparent, var(--c-background)),
     linear-gradient(to right, var(--grid-color) 2px, transparent 2px) 0 0 /
@@ -28,7 +28,7 @@ body {
 }
 
 [data-page] {
-  @apply flex items-center justify-center w-full h-full absolute top-0 left-0;
+  @apply flex items-center w-full h-full absolute top-0 left-0 p-12 md:p-24  overflow-auto;
 }
 
 [data-page]:not([data-active]) {
@@ -36,15 +36,27 @@ body {
 }
 
 .links {
-  @apply flex gap-4 text-xl;
+  @apply flex gap-4 md:text-xl flex-col md:flex-row items-center;
 }
 
 .links > a {
-  @apply text-white/50 hover:text-white;
+  @apply text-white/50 hover:text-white hover:-skew-x-6 transition-all;
 }
 
 .links > span {
+  @apply text-white/50 hidden md:block;
+}
+
+.experience {
+  @apply flex flex-col gap-1;
+}
+
+.experience > i {
   @apply text-white/50;
+}
+
+.experience > ul {
+  mask: linear-gradient(to bottom right, white 25%, rgba(255, 255, 255, 0.5));
 }
 
 @property --wipe-position {
@@ -80,6 +92,22 @@ body {
 .wipe.wiped,
 .wipe-reverse.wiped {
   --wipe-position: calc(-1 * var(--wipe-length));
+}
+
+a[target="_blank"] {
+  @apply hover:text-release underline transition-all;
+}
+
+a[target="_blank"]::after {
+  content: " \2750";
+}
+
+ul {
+  @apply list-disc ml-4 md:ml-8;
+}
+
+li {
+  @apply list-inside;
 }
 
 ::selection {

@@ -1,4 +1,4 @@
-import UI from "./UI/index.js";
+import Paging from "./UI/Paging.js";
 
 $(() => {
   setTimeout(() => {
@@ -8,18 +8,22 @@ $(() => {
 });
 
 function HandleHash() {
-  console.log("Hash Refresh");
   switch (window.location.hash) {
     case "#home":
-      UI.Paging.Navigate("home");
+      Paging.Navigate("home");
       break;
 
     case "#about":
-      UI.Paging.Navigate("about");
+    case "#portfolio":
+    case "#skills":
+    case "#experience":
+      Paging.Navigate(window.location.hash.slice(1));
       break;
 
     default:
       window.location.hash = "#home";
-      break;
+      return;
   }
+
+  document.title = `yanko | ${window.location.hash.slice(1)}`;
 }

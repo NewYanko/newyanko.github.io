@@ -1,26 +1,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yanko | Home</title>
+  <title>loading</title>
   <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/EventEmitter.js"></script>
   <link rel="stylesheet" href="stylesheets/augmented-ui.min.css" />
   <link rel="stylesheet" href="stylesheets/main.css" />
 </head>
 
 <body>
-  <div data-page="home" class="flex-col wipe">
-    <div class="text-8xl" style="mask: linear-gradient(white, transparent)">
+  <!-- What are you expecting to find here? -->
+  <div data-page="home" class="flex-col justify-center wipe">
+    <div
+      class="text-6xl md:text-8xl"
+      style="mask: linear-gradient(white, transparent)"
+    >
       yanko.dev
     </div>
-    <div class="text-3xl" style="mask: linear-gradient(transparent, white)">
+    <div
+      class="text-2xl md:text-3xl"
+      style="mask: linear-gradient(transparent, white)"
+    >
       Ian Peřina
     </div>
-    <!-- <span
+    <span
       class="text-8xl"
-      style="mask: radial-gradient(circle, white, transparent 25%)"
-      >•</span
-    > -->
-    <div class="links mt-4">
+      style="mask: radial-gradient(circle at center, white, transparent 50%)"
+      >---</span
+    >
+    <div class="links">
       <a href="#about">About</a>
       <span>•</span>
       <a href="#portfolio">Portfolio</a>
@@ -30,9 +38,112 @@
       <a href="#experience">Experience</a>
     </div>
   </div>
-  <div data-page="about" class="wipe-reverse">
-    ABOUT
-    <div class="w-40 h-40 bg-red-500"></div>
+  <div data-page="about" class="wipe-reverse flex-col">
+    <div
+      class="text-8xl break-all"
+      style="mask: linear-gradient(white, transparent)"
+    >
+      About
+    </div>
+    <p></p>
+  </div>
+  <div data-page="experience" class="wipe-reverse flex-col">
+    <div
+      class="text-8xl break-all mb-2"
+      style="mask: linear-gradient(white, transparent)"
+    >
+      Experience
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="experience">
+        <i>September 2023 - September 2024</i>
+        <b>Lizard Agency, Italy 🇮🇹 - Junior Developer (Remote, Part-Time)</b>
+        <ul>
+          <li>Development of desktop apps using web technologies.</li>
+          <li>
+            Communication with/NodeJS adapters for 3rd party hardware/firmware.
+          </li>
+          <li>
+            PCB design, including the
+            <a
+              href="https://electronic.perina.net/private/cv/Embedded%20Redacted.pdf"
+              target="_blank"
+              >engineering of SBCs from scratch</a
+            >, based on modern SoCs.
+          </li>
+          <li>
+            Design and development of modern UIs, using modern technologies
+            (React, Tailwind, ...)
+          </li>
+          <ul>
+            <li>
+              Samples:
+              <ul>
+                <li>
+                  “Project A” -
+                  <a
+                    href="https://electronic.perina.net/private/cv/ProjectA-Dashboard.pdf"
+                    target="_blank"
+                    >Dashboard</a
+                  >
+                  /
+                  <a
+                    href="https://electronic.perina.net/private/cv/ProjectA-User.pdf"
+                    target="_blank"
+                    >App</a
+                  >
+                </li>
+                <li>
+                  “Project B” -
+                  <a
+                    href="https://electronic.perina.net/private/cv/ProjectB-Dashboard.pdf"
+                    target="_blank"
+                    >Dashboard</a
+                  >
+                  /
+                  <a
+                    href="https://electronic.perina.net/private/cv/ProjectB-App.pdf"
+                    target="_blank"
+                    >App</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div class="experience">
+        <i>May 2023 - August 2023</i>
+        <b>Lizard Agency, Italy 🇮🇹 - Intern (On-Site, Full-Time)</b>
+        <ul>
+          <li>Software, web and firmware development.</li>
+          <li>
+            Full list of acquired experience on pages 3 and 4 of my
+            <a
+              href="https://electronic.perina.net/private/cv/Europass%20Redacted.pdf"
+              target="_blank"
+              >europass</a
+            >
+            (list compiled by the internship host)
+          </li>
+        </ul>
+      </div>
+      <div class="experience">
+        <i>Occasionally</i>
+        <b
+          >Private Entities, Remote - Freelancer in Software and Firmware
+          Development</b
+        >
+        <ul>
+          <li>Warehouse/stock management software.</li>
+          <li>
+            Firmware for ESP32-based boards (mesh networks, USB commands, E-Ink
+            displays).
+          </li>
+          <li>Development and maintenance of websites.</li>
+        </ul>
+      </div>
+    </div>
   </div>
   <script src="scripts/main.js" type="module"></script>
 </body>

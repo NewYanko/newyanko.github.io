@@ -1,7 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&family=Unbounded:wght@200..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --c-release: #99c7f4;
+  --c-background: #101010;
+}
+
 body {
-  @apply w-full h-full;
+  --grid-color: #ffffff45;
+  --grid-width: 128px;
+  --grid-height: 50px;
+
+  background: radial-gradient(circle, transparent, var(--c-background)),
+    linear-gradient(to right, var(--grid-color) 2px, transparent 2px) 0 0 /
+      var(--grid-width) var(--grid-height),
+    linear-gradient(to bottom, var(--grid-color) 2px, transparent 2px) 0 0 /
+      var(--grid-width) var(--grid-height);
+
+  background-position: center;
+
+  @apply w-full h-full bg-dark text-white font-[Unbounded];
+}
+
+[data-page] {
+  @apply flex w-full h-full;
+}
+
+.links {
+  @apply flex gap-4 text-xl;
+}
+
+.links > a {
+  @apply text-white/50 hover:text-white;
+}
+
+.links > span {
+  @apply text-white/50;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+::selection {
+  color: red;
+  background: yellow;
 }

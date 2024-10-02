@@ -606,51 +606,12 @@ video {
   display: none;
 }
 
-@keyframes bounce{
-  0%, 100%{
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-
-  50%{
-    transform: none;
-    animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
+.h-40{
+  height: 10rem;
 }
 
-.animate-bounce{
-  animation: bounce 1s infinite;
-}
-
-@keyframes spin{
-  to{
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin{
-  animation: spin 1s linear infinite;
-}
-
-@keyframes ping{
-  75%, 100%{
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-.animate-ping{
-  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes pulse{
-  50%{
-    opacity: .5;
-  }
-}
-
-.animate-pulse{
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.w-40{
+  width: 10rem;
 }
 
 .resize{
@@ -661,16 +622,13 @@ video {
   flex-direction: column;
 }
 
-.items-center{
-  align-items: center;
-}
-
-.justify-center{
-  justify-content: center;
-}
-
 .border{
   border-width: 1px;
+}
+
+.bg-red-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .text-3xl{
@@ -695,6 +653,7 @@ video {
 :root {
   --c-release: #99c7f4;
   --c-background: #101010;
+  --wipe-length: 25%;
 }
 
 body {
@@ -716,9 +675,18 @@ body {
 }
 
 [data-page]{
+  position: absolute;
+  top: 0px;
+  left: 0px;
   display: flex;
   height: 100%;
   width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-page]:not([data-active]) {
+  display: none;
 }
 
 .links{
@@ -741,14 +709,51 @@ body {
   color: rgb(255 255 255 / 0.5);
 }
 
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
+@property --wipe-position {
+  syntax: "<percentage>";
 
-  to {
-    transform: translateX(-100%);
-  }
+  inherits: false;
+
+  initial-value: 100%;
+}
+
+.wipe {
+  --wipe-position: 100%;
+  -webkit-mask-image: linear-gradient(
+    to bottom right,
+    black var(--wipe-position),
+    transparent calc(var(--wipe-position) + var(--wipe-length)),
+    transparent
+  );
+          mask-image: linear-gradient(
+    to bottom right,
+    black var(--wipe-position),
+    transparent calc(var(--wipe-position) + var(--wipe-length)),
+    transparent
+  );
+  transition: --wipe-position 600ms cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+.wipe-reverse {
+  --wipe-position: 100%;
+  -webkit-mask-image: linear-gradient(
+    to top left,
+    black var(--wipe-position),
+    transparent calc(var(--wipe-position) + var(--wipe-length)),
+    transparent
+  );
+          mask-image: linear-gradient(
+    to top left,
+    black var(--wipe-position),
+    transparent calc(var(--wipe-position) + var(--wipe-length)),
+    transparent
+  );
+  transition: --wipe-position 600ms cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+.wipe.wiped,
+.wipe-reverse.wiped {
+  --wipe-position: calc(-1 * var(--wipe-length));
 }
 
 ::-moz-selection {

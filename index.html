@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div data-page="home" class="flex-col items-center justify-center">
+  <div data-page="home" class="flex-col wipe">
     <div class="text-8xl" style="mask: linear-gradient(white, transparent)">
       yanko.dev
     </div>
@@ -21,13 +21,18 @@
       >•</span
     > -->
     <div class="links mt-4">
-      <a href="#">About</a>
+      <a href="#about">About</a>
       <span>•</span>
-      <a href="#">Portfolio</a>
+      <a href="#portfolio">Portfolio</a>
       <span>•</span>
-      <a href="#">Skills</a>
+      <a href="#skills">Skills</a>
       <span>•</span>
-      <a href="#">Experience</a>
+      <a href="#experience">Experience</a>
     </div>
   </div>
+  <div data-page="about" class="wipe-reverse">
+    ABOUT
+    <div class="w-40 h-40 bg-red-500"></div>
+  </div>
+  <script src="scripts/main.js" type="module"></script>
 </body>

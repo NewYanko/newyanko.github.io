@@ -1,0 +1,11 @@
+{
+  "name": "yanko.dev",
+  "version": "1.0.0",
+  "description": "Portfolio website",
+  "scripts": {
+    "watch": "npm run build -- --watch",
+    "build": "npx tailwindcss -i ./stylesheets/main.src.css -o ./stylesheets/main.css"
+  },
+  "author": "yanko",
+  "license": "ISC"
+}

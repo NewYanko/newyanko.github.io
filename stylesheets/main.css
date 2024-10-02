@@ -634,6 +634,10 @@ video {
   border-width: 1px;
 }
 
+.\!p-0{
+  padding: 0px !important;
+}
+
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;

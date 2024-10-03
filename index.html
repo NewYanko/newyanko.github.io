@@ -39,18 +39,8 @@
 <body>
   <!-- What are you expecting to find here? -->
   <div data-page="home" class="flex-col justify-center wipe !p-0">
-    <div
-      class="text-6xl md:text-8xl"
-      style="mask: linear-gradient(white, transparent)"
-    >
-      yanko.dev
-    </div>
-    <div
-      class="text-2xl md:text-3xl"
-      style="mask: linear-gradient(transparent, white)"
-    >
-      Ian Peřina
-    </div>
+    <div class="text-6xl md:text-8xl mask-down">yanko.dev</div>
+    <div class="text-2xl md:text-3xl mask-up">Ian Peřina</div>
     <span
       class="text-8xl"
       style="mask: radial-gradient(circle at center, white, transparent 50%)"
@@ -67,21 +57,117 @@
     </div>
   </div>
   <div data-page="about" class="wipe-reverse flex-col">
-    <div
-      class="text-8xl break-all"
-      style="mask: linear-gradient(white, transparent)"
-    >
-      About
-    </div>
+    <div class="text-8xl break-all mask-down">About</div>
     <p></p>
   </div>
-  <div data-page="experience" class="wipe-reverse flex-col">
-    <div
-      class="text-8xl break-all mb-2"
-      style="mask: linear-gradient(white, transparent)"
-    >
-      Experience
+  <div data-page="portfolio" class="wipe-reverse flex-col">
+    <div class="text-8xl break-all mask-down mb-2">Portfolio</div>
+
+    <div class="flex flex-col gap-4">
+      <div class="experience">
+        <i>Q2 2024</i>
+        <b>Fiscal printer microservice <i>(“Project B”)</i></b>
+        <div class="text-white/75">
+          Every brand of fiscal printer has different interfaces, commands and
+          protocols. This fact makes it almost impossible to reliably integrate
+          fiscal printing in a software that needs it. To solve this issue, I
+          created a microservice + manager interface in NodeJS / TypeScript +
+          Electron (desktop app). This included:
+          <ul class="my-2">
+            <li>
+              Researching and implementing different protocols for different
+              printers
+            </li>
+            <li>Consolidating all brands into a static set of endpoints</li>
+            <li>
+              Designing and developing a consolidated API, that would cover all
+              different printers with the same endpoints
+            </li>
+            <li>
+              Creating a very simple dashboard for licensing and troubleshooting
+            </li>
+            <li>
+              Designing and developing the UI for the manager, keeping it as
+              simple as possible
+            </li>
+            <li>
+              Implemeting a custom DNS server, to allow local HTTPS requests
+              without self-signed certificates
+            </li>
+          </ul>
+        </div>
+        <a
+          href="https://electronic.perina.net/private/cv/ProjectB-App.pdf"
+          target="_blank"
+          >Manager App</a
+        >
+        <a
+          href="https://electronic.perina.net/private/cv/ProjectB-Dashboard.pdf"
+          target="_blank"
+          >Dashboard</a
+        >
+      </div>
+
+      <div class="experience">
+        <i>Q3 2023</i>
+        <b>Cashless payment for live events <i>(“Project A”)</i></b>
+        <div class="text-white/90">
+          After attending to a few live events, I identfied a choke point in the
+          live event payments - not everyone is tech literate enough to use
+          online payments. Sometimes it is just too much effort, which makes
+          potential customers give up on spending. In this project I
+          <ul class="my-2">
+            <li>Designed a flow with minimal friction for the end users</li>
+            <li>
+              Made design sketches for user, staff and management interfaces
+            </li>
+            <li>
+              Created a backend server for transactions in NodeJS / Typescript
+            </li>
+            <li>Made iOS and Android apps in React for staff and end users</li>
+            <li>Developed a web app for event management (dashboard)</li>
+          </ul>
+        </div>
+        <a
+          href="https://electronic.perina.net/private/cv/ProjectA-User.pdf"
+          target="_blank"
+          >User Mobile App</a
+        >
+        <a
+          href="https://electronic.perina.net/private/cv/ProjectA-Dashboard.pdf"
+          target="_blank"
+          >Dashboard</a
+        >
+      </div>
+
+      <div class="experience">
+        <i>Q2 2023</i>
+        <b>Custom Single-Board Computer (SBC)</b>
+        <div class="text-white/75">
+          During my Erasmus internship, I researched, designed and prototyped a
+          custom SBC. This required:
+          <ul class="my-2">
+            <li>Research of existing solutions</li>
+            <li>
+              Comparison of different components, and selecting the ones that
+              best fit the requirements
+            </li>
+            <li>Schematic design</li>
+            <li>
+              PCB design, following rules to ensure digital signal integrity
+            </li>
+          </ul>
+        </div>
+        <a
+          href="https://electronic.perina.net/private/cv/Embedded%20Redacted.pdf"
+          target="_blank"
+          >Project outline</a
+        >
+      </div>
     </div>
+  </div>
+  <div data-page="experience" class="wipe-reverse flex-col">
+    <div class="text-8xl break-all mb-2 mask-down">Experience</div>
     <div class="flex flex-col gap-4">
       <div class="experience">
         <i>September 2023 - September 2024</i>
@@ -106,7 +192,8 @@
           </li>
           <ul>
             <li>
-              Samples:
+              Samples: (check the Portfolio page for a more detailed
+              description)
               <ul>
                 <li>
                   “Project A” -

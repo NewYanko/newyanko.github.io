@@ -56,7 +56,11 @@ body {
 }
 
 .experience > ul {
-  mask: linear-gradient(to bottom right, white 25%, rgba(255, 255, 255, 0.5));
+  mask: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.75) 25%,
+    rgba(255, 255, 255, 0.5)
+  );
 }
 
 @property --wipe-position {
@@ -92,6 +96,14 @@ body {
 .wipe.wiped,
 .wipe-reverse.wiped {
   --wipe-position: calc(-1 * var(--wipe-length));
+}
+
+.mask-down {
+  mask: linear-gradient(white, transparent);
+}
+
+.mask-up {
+  mask: linear-gradient(transparent, white);
 }
 
 a[target="_blank"] {

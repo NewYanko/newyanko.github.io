@@ -675,12 +675,26 @@ video {
   line-height: 1;
 }
 
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-xs{
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .text-white\/75{
   color: rgb(255 255 255 / 0.75);
 }
 
 .text-white\/90{
   color: rgb(255 255 255 / 0.9);
+}
+
+.text-white\/50{
+  color: rgb(255 255 255 / 0.5);
 }
 
 .\!no-underline{

@@ -63,6 +63,31 @@ body {
   );
 }
 
+.icon-list {
+  @apply flex gap-8 flex-wrap justify-around;
+}
+
+.icon-list > div {
+  @apply text-center;
+}
+
+.icon-list > div > img {
+  @apply w-32 h-32 m-auto transition-all ease-out duration-300;
+  filter: drop-shadow(0 0 5rem rgb(255 255 255 / 0.5));
+}
+
+.icon-list > div > p {
+  @apply opacity-25 md:-translate-y-2 transition-all ease-out;
+}
+
+.icon-list > div:hover > p {
+  @apply opacity-100 translate-y-0;
+}
+
+.icon-list > div:hover > img {
+  filter: drop-shadow(0 0 2.5rem rgb(255 255 255 / 0.5));
+}
+
 @property --wipe-position {
   syntax: "<percentage>";
   inherits: false;

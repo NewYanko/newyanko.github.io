@@ -587,14 +587,6 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.mt-2{
-  margin-top: 0.5rem;
-}
-
-.mt-1{
-  margin-top: 0.25rem;
-}
-
 .block{
   display: block;
 }
@@ -674,22 +666,6 @@ video {
   line-height: 1;
 }
 
-.font-medium{
-  font-weight: 500;
-}
-
-.font-thin{
-  font-weight: 100;
-}
-
-.font-light{
-  font-weight: 300;
-}
-
-.font-normal{
-  font-weight: 400;
-}
-
 .text-white\/75{
   color: rgb(255 255 255 / 0.75);
 }
@@ -720,7 +696,7 @@ video {
 }
 
 body {
-  --grid-color: #ffffff45;
+  --grid-color: #ffffff30;
   background: radial-gradient(circle, transparent, var(--c-background)),
     linear-gradient(to right, var(--grid-color) 2px, transparent 2px) 0 0 /
       var(--grid-width) var(--grid-height),

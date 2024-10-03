@@ -14,7 +14,7 @@
 }
 
 body {
-  --grid-color: #ffffff45;
+  --grid-color: #ffffff30;
 
   background: radial-gradient(circle, transparent, var(--c-background)),
     linear-gradient(to right, var(--grid-color) 2px, transparent 2px) 0 0 /

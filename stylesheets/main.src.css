@@ -64,7 +64,7 @@ body {
 }
 
 .icon-list {
-  @apply flex gap-8 md:gap-16 flex-wrap justify-around;
+  @apply flex gap-4 md:gap-16 flex-wrap justify-around;
 }
 
 .icon-list > div {

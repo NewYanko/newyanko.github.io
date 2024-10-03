@@ -643,6 +643,10 @@ video {
   padding: 0px !important;
 }
 
+.p-2{
+  padding: 0.5rem;
+}
+
 .pt-8{
   padding-top: 2rem;
 }
@@ -654,6 +658,11 @@ video {
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-6xl{
@@ -804,7 +813,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 @media (min-width: 768px){

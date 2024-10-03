@@ -36,7 +36,7 @@ body {
 }
 
 .links {
-  @apply flex gap-4 md:text-xl flex-col md:flex-row items-center;
+  @apply flex gap-4 text-xl flex-col md:flex-row items-center;
 }
 
 .links > a {

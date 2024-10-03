@@ -578,8 +578,16 @@ video {
   position: relative;
 }
 
+.m-auto{
+  margin: auto;
+}
+
 .mb-2{
   margin-bottom: 0.5rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
 }
 
 .block{
@@ -638,6 +646,14 @@ video {
   padding: 0px !important;
 }
 
+.pt-8{
+  padding-top: 2rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
@@ -651,6 +667,10 @@ video {
 .text-8xl{
   font-size: 6rem;
   line-height: 1;
+}
+
+.outline{
+  outline-style: solid;
 }
 
 .blur{
@@ -713,13 +733,13 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 @media (min-width: 768px){
   .links{
     flex-direction: row;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 }
 

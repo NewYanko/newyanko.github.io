@@ -631,10 +631,6 @@ video {
   gap: 1rem;
 }
 
-.break-all{
-  word-break: break-all;
-}
-
 .border{
   border-width: 1px;
 }
@@ -685,16 +681,16 @@ video {
   line-height: 1rem;
 }
 
+.text-white\/50{
+  color: rgb(255 255 255 / 0.5);
+}
+
 .text-white\/75{
   color: rgb(255 255 255 / 0.75);
 }
 
 .text-white\/90{
   color: rgb(255 255 255 / 0.9);
-}
-
-.text-white\/50{
-  color: rgb(255 255 255 / 0.5);
 }
 
 .\!no-underline{
@@ -874,6 +870,60 @@ body {
 
 .icon-list > div:hover > img {
   filter: drop-shadow(0 0 2.5rem rgb(255 255 255 / 0.5));
+}
+
+.page-title{
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.page-title > a{
+  display: none;
+  cursor: pointer;
+}
+
+@media (min-width: 768px){
+  .page-title > a{
+    display: block;
+  }
+}
+
+.page-title > a::before{
+  margin-right: 1.25rem;
+  display: block;
+  font-size: 6rem;
+  line-height: 1;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transform: perspective(200px) rotateY(20deg) translateX(10px);
+  -webkit-mask-image: linear-gradient(90deg, white 50%, transparent 100%);
+          mask-image: linear-gradient(90deg, white 50%, transparent 100%);
+  -webkit-mask-position: 100% 0;
+          mask-position: 100% 0;
+  -webkit-mask-size: 150%;
+          mask-size: 150%;
+  content: "‹";
+}
+
+.page-title > a:hover::before {
+  transform: perspective(200px) rotateY(0deg) translateX(0px);
+  -webkit-mask-position: 0% 0;
+          mask-position: 0% 0;
+}
+
+.page-title > a:active::before{
+  opacity: 0.5;
+}
+
+.page-title > div{
+  z-index: 10;
+  word-break: break-all;
+  font-size: 6rem;
+  line-height: 1;
+  -webkit-mask: linear-gradient(white, transparent);
+          mask: linear-gradient(white, transparent);
 }
 
 @property --wipe-position {

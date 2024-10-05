@@ -88,6 +88,36 @@ body {
   filter: drop-shadow(0 0 2.5rem rgb(255 255 255 / 0.5));
 }
 
+.page-title {
+  @apply flex items-center mb-2;
+}
+
+.page-title > a {
+  @apply cursor-pointer hidden md:block;
+}
+
+.page-title > a::before {
+  @apply text-8xl block transition-all mr-5;
+  transform: perspective(200px) rotateY(20deg) translateX(10px);
+  mask-image: linear-gradient(90deg, white 50%, transparent 100%);
+  mask-position: 100% 0;
+  mask-size: 150%;
+  content: "‹";
+}
+
+.page-title > a:hover::before {
+  transform: perspective(200px) rotateY(0deg) translateX(0px);
+  mask-position: 0% 0;
+}
+
+.page-title > a:active::before {
+  @apply opacity-50;
+}
+
+.page-title > div {
+  @apply text-8xl break-all mask-down z-10;
+}
+
 @property --wipe-position {
   syntax: "<percentage>";
   inherits: false;

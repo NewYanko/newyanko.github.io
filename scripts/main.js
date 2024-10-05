@@ -10,6 +10,11 @@ $(() => {
   const MinClick = 100;
   let LastMouseDown = 0;
 
+  $(".page-title > a").on("click", () => {
+    if (window.history.length) return window.history.back();
+    window.location.replace(`#home`);
+  });
+
   $("a").on("mousedown", () => {
     $("#click-in")[0].currentTime = 0;
     $("#click-in")[0].play();

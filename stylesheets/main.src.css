@@ -101,7 +101,7 @@ body {
 }
 
 .page-title > a::before {
-  @apply text-3xl md:text-8xl transition-all mr-5 content-[var(--t-back-sm)] md:content-[var(--t-back-md)] block;
+  @apply text-3xl md:text-8xl transition-all mb-1 md:mb-0 md:mr-5 content-[var(--t-back-sm)] md:content-[var(--t-back-md)] block;
 }
 
 @media (min-width: 768px) {
@@ -179,6 +179,14 @@ a[target="_blank"]::after {
 
 ul {
   @apply list-disc ml-4 md:ml-8;
+}
+
+ul > ul {
+  @apply list-[circle];
+}
+
+ul > ul > ul {
+  @apply list-[square];
 }
 
 li {

@@ -893,7 +893,7 @@ body {
 }
 
 .page-title > a::before{
-  margin-right: 1.25rem;
+  margin-bottom: 0.25rem;
   display: block;
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -906,6 +906,8 @@ body {
 
 @media (min-width: 768px){
   .page-title > a::before{
+    margin-bottom: 0px;
+    margin-right: 1.25rem;
     font-size: 6rem;
     line-height: 1;
     --tw-content: var(--t-back-md);
@@ -1020,6 +1022,14 @@ ul{
   ul{
     margin-left: 2rem;
   }
+}
+
+ul > ul{
+  list-style-type: circle;
+}
+
+ul > ul > ul{
+  list-style-type: square;
 }
 
 li{

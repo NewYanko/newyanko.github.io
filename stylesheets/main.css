@@ -716,11 +716,14 @@ video {
   --wipe-length: 25%;
   --grid-width: 128px;
   --grid-height: 50px;
+  --t-back-sm: "‹ back";
+  --t-back-md: "‹";
 }
 
 body {
   --grid-color: #ffffff30;
-  background: radial-gradient(circle, transparent, var(--c-background)),
+  background:
+    radial-gradient(circle, transparent, var(--c-background)),
     linear-gradient(to right, var(--grid-color) 2px, transparent 2px) 0 0 /
       var(--grid-width) var(--grid-height),
     linear-gradient(to bottom, var(--grid-color) 2px, transparent 2px) 0 0 /
@@ -875,42 +878,52 @@ body {
 .page-title{
   margin-bottom: 0.5rem;
   display: flex;
-  align-items: center;
-}
-
-.page-title > a{
-  display: none;
-  cursor: pointer;
+  flex-direction: column;
 }
 
 @media (min-width: 768px){
-  .page-title > a{
-    display: block;
+  .page-title{
+    flex-direction: row;
+    align-items: center;
   }
+}
+
+.page-title > a{
+  cursor: pointer;
 }
 
 .page-title > a::before{
   margin-right: 1.25rem;
   display: block;
-  font-size: 6rem;
-  line-height: 1;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-  transform: perspective(200px) rotateY(20deg) translateX(10px);
-  -webkit-mask-image: linear-gradient(90deg, white 50%, transparent 100%);
-          mask-image: linear-gradient(90deg, white 50%, transparent 100%);
-  -webkit-mask-position: 100% 0;
-          mask-position: 100% 0;
-  -webkit-mask-size: 150%;
-          mask-size: 150%;
-  content: "‹";
+  --tw-content: var(--t-back-sm);
+  content: var(--tw-content);
 }
 
-.page-title > a:hover::before {
-  transform: perspective(200px) rotateY(0deg) translateX(0px);
-  -webkit-mask-position: 0% 0;
-          mask-position: 0% 0;
+@media (min-width: 768px){
+  .page-title > a::before{
+    font-size: 6rem;
+    line-height: 1;
+    --tw-content: var(--t-back-md);
+    content: var(--tw-content);
+    transform: perspective(200px) rotateY(20deg) translateX(10px);
+    -webkit-mask-image: linear-gradient(90deg, white 50%, transparent 100%);
+            mask-image: linear-gradient(90deg, white 50%, transparent 100%);
+    -webkit-mask-position: 100% 0;
+            mask-position: 100% 0;
+    -webkit-mask-size: 150%;
+            mask-size: 150%;
+  }
+
+  .page-title > a:hover::before {
+    transform: perspective(200px) rotateY(0deg) translateX(0px);
+    -webkit-mask-position: 0% 0;
+            mask-position: 0% 0;
+  }
 }
 
 .page-title > a:active::before{

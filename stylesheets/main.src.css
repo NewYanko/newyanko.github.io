@@ -11,12 +11,16 @@
   --wipe-length: 25%;
   --grid-width: 128px;
   --grid-height: 50px;
+
+  --t-back-sm: "‹ back";
+  --t-back-md: "‹";
 }
 
 body {
   --grid-color: #ffffff30;
 
-  background: radial-gradient(circle, transparent, var(--c-background)),
+  background:
+    radial-gradient(circle, transparent, var(--c-background)),
     linear-gradient(to right, var(--grid-color) 2px, transparent 2px) 0 0 /
       var(--grid-width) var(--grid-height),
     linear-gradient(to bottom, var(--grid-color) 2px, transparent 2px) 0 0 /
@@ -89,25 +93,29 @@ body {
 }
 
 .page-title {
-  @apply flex items-center mb-2;
+  @apply flex md:items-center mb-2 flex-col md:flex-row;
 }
 
 .page-title > a {
-  @apply cursor-pointer hidden md:block;
+  @apply cursor-pointer;
 }
 
 .page-title > a::before {
-  @apply text-8xl block transition-all mr-5;
-  transform: perspective(200px) rotateY(20deg) translateX(10px);
-  mask-image: linear-gradient(90deg, white 50%, transparent 100%);
-  mask-position: 100% 0;
-  mask-size: 150%;
-  content: "‹";
+  @apply text-3xl md:text-8xl transition-all mr-5 content-[var(--t-back-sm)] md:content-[var(--t-back-md)] block;
 }
 
-.page-title > a:hover::before {
-  transform: perspective(200px) rotateY(0deg) translateX(0px);
-  mask-position: 0% 0;
+@media (min-width: 768px) {
+  .page-title > a::before {
+    transform: perspective(200px) rotateY(20deg) translateX(10px);
+    mask-image: linear-gradient(90deg, white 50%, transparent 100%);
+    mask-position: 100% 0;
+    mask-size: 150%;
+  }
+
+  .page-title > a:hover::before {
+    transform: perspective(200px) rotateY(0deg) translateX(0px);
+    mask-position: 0% 0;
+  }
 }
 
 .page-title > a:active::before {

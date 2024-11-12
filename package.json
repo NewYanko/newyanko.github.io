@@ -4,7 +4,7 @@
   "description": "Portfolio website",
   "scripts": {
     "watch": "npm run build -- --watch",
-    "build": "npx tailwindcss -i ./stylesheets/main.src.css -o ./stylesheets/main.css"
+    "build": "npx tailwindcss -i ./legacy/stylesheets/main.src.css -o ./legacy/stylesheets/main.css"
   },
   "author": "yanko",
   "license": "ISC",
